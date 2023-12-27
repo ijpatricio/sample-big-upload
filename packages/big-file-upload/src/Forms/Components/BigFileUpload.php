@@ -22,7 +22,7 @@ class BigFileUpload extends BaseFileUpload
     use HasAlignment;
     use HasExtraAlpineAttributes;
 
-    protected string $view = 'filament-forms::components.file-upload';
+    protected string $view = 'big-file-upload::forms.components.big-file-upload';
 
     protected string | Closure | null $imageCropAspectRatio = null;
 
