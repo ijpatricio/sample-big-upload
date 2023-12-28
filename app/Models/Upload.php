@@ -12,6 +12,10 @@ class Upload extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'media'
+    ];
+
     public static function getForm(): array
     {
         return [
