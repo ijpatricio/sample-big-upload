@@ -1,19 +1,21 @@
 <?php
 
-namespace Tests\Feature;
+use App\Filament\Resources\UploadResource;
+use App\Models\Upload;
+use Illuminate\Http\UploadedFile;
+use function Pest\Livewire\livewire;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+it('can create', function () {
+    $this->get(UploadResource::getUrl('create'))->assertSuccessful();
 
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     */
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
+    livewire(UploadResource\Pages\CreateUpload::class)
+        ->fillForm([
+            'media' => UploadedFile::fake()->image('img.png')
+        ])
+        ->call('create')
+        ->assertHasNoFormErrors();
 
-        $response->assertOk();
-    }
-}
+    $this->assertDatabaseHas(Upload::class, [
+        'media' => 'img.png'
+    ]);
+});

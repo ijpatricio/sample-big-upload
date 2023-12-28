@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
-use Filament\Tables;
+use App\Filament\Resources\UploadResource\Pages;
 use App\Models\Upload;
 use Filament\Forms\Form;
-use Filament\Tables\Table;
 use Filament\Resources\Resource;
-use App\Filament\Resources\UploadResource\Pages;
+use Filament\Tables;
+use Filament\Tables\Table;
 
 class UploadResource extends Resource
 {
