@@ -26,6 +26,7 @@ class UploadResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('media'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
