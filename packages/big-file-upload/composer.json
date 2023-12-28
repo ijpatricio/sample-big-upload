@@ -1,0 +1,31 @@
+{
+    "name": "bhushan/filament-big-file-upload-plugin",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bhushan\\BigFileUpload\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bhushan",
+            "email": "bhushangaykawad@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "filament/support": "^3.0",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "laravel/pint": "dev-main"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bhushan\\BigFileUpload\\BigFileUploadServiceProvider"
+            ]
+        }
+    }
+}
